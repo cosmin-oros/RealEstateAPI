@@ -1,12 +1,29 @@
 package com.cosmin.app.realestateapi.Models;
 
+import jakarta.persistence.*;
+
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column
     private String typeOfProperty;
+
+    @Column
     private String address;
+
+    @Column
     private int squareFootage;
+
+    @Column
     private int nrOfBedrooms;
+
+    @Column
     private int nrOfBathrooms;
+
+    @Column
     private double price;
 
     public long getId() {
