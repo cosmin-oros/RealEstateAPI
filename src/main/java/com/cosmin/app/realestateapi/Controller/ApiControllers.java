@@ -38,8 +38,14 @@ public class ApiControllers {
         updatedProperty.setSquareFootage(property.getSquareFootage());
         updatedProperty.setPrice(property.getPrice());
 
-        return "Updated property ... ";
+        return "Updated property with id: " + id + " ...";
     }
 
+    @DeleteMapping(value = "/delete/{id}")
+    public String deleteProperty(@PathVariable long id) {
+        Properties deleteProperty = propertiesRepo.findById(id).get();
+        propertiesRepo.delete(deleteProperty);
 
+        return "Deleted property with id: " + id + " ...";
+    }
 }
