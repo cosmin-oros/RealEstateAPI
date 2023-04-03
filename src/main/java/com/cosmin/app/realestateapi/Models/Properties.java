@@ -3,7 +3,7 @@ package com.cosmin.app.realestateapi.Models;
 import jakarta.persistence.*;
 
 @Entity
-public class User {
+public class Properties {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
